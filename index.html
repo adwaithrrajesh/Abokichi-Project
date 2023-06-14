@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <script src="./script.js"></script>
+  <!-- Include Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <title>Abokichi</title>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Header -->
+    <nav class="flex bg-black">
+        <div class="relative">
+          <h1 class="mx-4 text-white cursor-pointer" onclick="toggleDropdown()">
+            USD
+            <i class="ml-3 fas fa-chevron-down dropdown-icon"></i>
+          </h1>
+          <div id="dropdown" class="absolute z-10 hidden w-40 py-2 mt-2 text-black bg-white rounded-md shadow-lg">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-200">INR</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-200">EUR</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-200">CHF</a>
+          </div>
+        </div>
+        <h1 class="mx-4 text-white">
+          <i class="mr-2 fas fa-map-marker-alt"></i> Stores
+        </h1>
+        <h1 class="mx-10 ml-auto text-white">Login/Register</h1>
+      </nav>
+      
+
+
+      
+      <!-- Navbar -->
+      <nav class="flex items-center justify-between h-16 bg-gray-100">
+        <div class="flex items-center">
+          <img src="./public/ABOKICHI_logo_landscape_360x.avif" alt="Logo" class="h-20">
+        </div>
+      
+        <div class="justify-center hidden space-x-16 md:flex ">
+          <div class="relative">
+            <a href="#" class="relative text-black hover:text-gray-600" id="shopLink" onclick="toggleShopDropdown()">
+              Shop <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <ul class="absolute z-10 hidden pr-10 mt-2 text-black bg-white border border-gray-300 rounded-lg shadow-lg" id="shopDropdown">
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Soap</a></li>
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Oil</a></li>
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Cream</a></li>
+            </ul>
+          </div>
+          <a href="#" class="text-black hover:text-gray-600">Our Story</a>
+          <a href="#" class="text-black hover:text-gray-600">Recipes</a>
+          <a href="#" class="text-black hover:text-gray-600">Contact</a>
+        </div>
+      
+        <div class="flex items-center space-x-4 md:hidden">
+          <button type="button" class="text-lg text-gray-800 cursor-pointer focus:outline-none">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      
+        <div class="items-center hidden mr-20 space-x-6 md:flex">
+          <i class="text-lg text-gray-800 cursor-pointer fas fa-search"></i>
+          <i class="text-lg text-gray-800 cursor-pointer fas fa-heart"></i>
+          <i class="p-2 text-lg text-gray-800 cursor-pointer fas fa-shopping-bag"></i>
+        </div>
+      </nav>
+      
+      <!-- Carousel -->
+      <div class="relative w-500 h-500">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div>
+          <img src="https://cdn.shopify.com/s/files/1/0058/0252/4783/articles/ultimate-guide-to-golden-milk_253d1cbd-184f-4f34-9a68-829a1874ce69_1200x.jpg?v=1586539800" alt="Background Image" class="object-cover object-center w-full h-80">
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h1 class="mb-24 text-4xl text-white">Products</h1>
+        </div>
+      </div>
+      
+      
+
+      <!-- Product -->
+      <div class="justify-start">
+        <h1 class="mt-8 text-2xl ml-7">Products (18)</h1>
+      </div>
+
+      <!-- Options -->
+      <div class="flex flex-wrap items-center ml-4">
+        <div class="flex items-center justify-start w-24 h-10 mt-10 text-white bg-black ml-7 sm:w-28 sm:ml-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 sm:w-10 sm:h-10">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <span class="ml-2 font-light">Filter</span>
+        </div>
+        <div class="w-px h-10 mx-4 mt-10 bg-black"></div>
+      
+        <div class="flex items-center mt-10">
+          <i class="mt-2 ml-2 text-gray-600 fas fa-th-large fa-2x"></i>
+          <i class="mt-2 ml-2 text-gray-600 fas fa-list fa-lg fa-2x"></i>
+        </div>
+      
+        <div class="flex items-center mt-10 ml-auto">
+          <h1 class="mr-2 text-xl font-bold sm:mr-10">Sort By:</h1>
+          <a href="#" class="relative mr-4 text-black sm:mr-24 hover:text-gray-600" id="alphabet" onclick="alphaDropdown()">
+            Alphabetically, A-Z <i class="fas fa-chevron-down dropdown-icon"></i>
+          </a>
+        </div>
+      </div>
+      
+
+      <hr class="w-full mt-6 border-t border-black">
+
+      <!-- Cards -->
+      <div class="flex flex-wrap justify-center">
+        <div class="max-w-xs mx-2 my-4 overflow-hidden bg-white rounded-lg shadow-md">
+            <div class="flex items-center justify-center h-40">
+                <img class="w-32" src="https://cdn.shopify.com/s/files/1/0290/9689/products/Chili_miso_250ml_1.png?v=1668571766&width=600" alt="Product Image">
+              </div>
+              <div class="p-4">
+                <h2 class="mb-2 text-xl text-center">OKAZU - CHILI MISO - Japenese miso chill oil (230 ml)</h2>
+                <p class="font-semibold text-center text-gray-900">$13.99</p>
+                <hr class="my-4 border-t border-gray-300">
+                <div class="flex items-center">
+                  <div class="flex items-center mr-2">
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                  </div>
+                  <div class="w-px h-5 bg-gray-300"></div>
+                  <p class="ml-2 text-gray-700">5.0 (120 Reviews)</p>
+                </div>
+              </div>
+        </div>
+
+        <div class="max-w-xs mx-2 my-4 overflow-hidden bg-white rounded-lg shadow-md">
+            <div class="flex items-center justify-center h-40">
+                <img class="w-32" src="https://cdn.shopify.com/s/files/1/0290/9689/products/Chili_miso_250ml_1.png?v=1668571766&width=600" alt="Product Image">
+              </div>
+              <div class="p-4">
+                <h2 class="mb-2 text-xl text-center">OKAZU - CHILI MISO - Japenese miso chill oil (230 ml)</h2>
+                <p class="font-semibold text-center text-gray-900">$13.99</p>
+                <hr class="my-4 border-t border-gray-300">
+                <div class="flex items-center">
+                  <div class="flex items-center mr-2">
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                  </div>
+                  <div class="w-px h-5 bg-gray-300"></div>
+                  <p class="ml-2 text-gray-700">5.0 (120 Reviews)</p>
+                </div>
+              </div>
+        </div>
+        <div class="max-w-xs mx-2 my-4 overflow-hidden bg-white rounded-lg shadow-md">
+            <div class="flex items-center justify-center h-40">
+                <img class="w-32" src="https://cdn.shopify.com/s/files/1/0290/9689/products/Chili_miso_250ml_1.png?v=1668571766&width=600" alt="Product Image">
+              </div>
+              <div class="p-4">
+                <h2 class="mb-2 text-xl text-center">OKAZU - CHILI MISO - Japenese miso chill oil (230 ml)</h2>
+                <p class="font-semibold text-center text-gray-900">$13.99</p>
+                <hr class="my-4 border-t border-gray-300">
+                <div class="flex items-center">
+                  <div class="flex items-center mr-2">
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                  </div>
+                  <div class="w-px h-5 bg-gray-300"></div>
+                  <p class="ml-2 text-gray-700">5.0 (120 Reviews)</p>
+                </div>
+              </div>
+        </div>
+        <div class="max-w-xs mx-2 my-4 overflow-hidden bg-white rounded-lg shadow-md">
+            <div class="flex items-center justify-center h-40">
+                <img class="w-32" src="https://cdn.shopify.com/s/files/1/0290/9689/products/Chili_miso_250ml_1.png?v=1668571766&width=600" alt="Product Image">
+              </div>
+              <div class="p-4">
+                <h2 class="mb-2 text-xl text-center">OKAZU - CHILI MISO - Japenese miso chill oil (230 ml)</h2>
+                <p class="font-semibold text-center text-gray-900">$13.99</p>
+                <hr class="my-4 border-t border-gray-300">
+                <div class="flex items-center">
+                  <div class="flex items-center mr-2">
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                    <i class="text-yellow-500 fas fa-star"></i>
+                  </div>
+                  <div class="w-px h-5 bg-gray-300"></div>
+                  <p class="ml-2 text-gray-700">5.0 (120 Reviews)</p>
+                </div>
+              </div>
+        </div>
+
+      </div>
+
+      <!---------------------------------------------------- Footer -------------------------------------->
+      
+      <footer class="bg-green-100">
+        <div class="container flex flex-wrap items-center justify-between px-4 py-8 mx-auto">
+          <div class="mb-4 mr-8">
+            <h3 class="mb-2 font-bold">About</h3>
+            <ul class="space-y-2">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Customer Service</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+      
+          <div class="mb-4 mr-8">
+            <h3 class="mb-2 font-bold">Legal</h3>
+            <ul class="space-y-2">
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Refund Policy</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+      
+          <div class="flex items-center mt-44">
+            <img class="h-6 mr-2" src="https://assets.stickpng.com/images/58482363cef1014c0b5e49c1.png" alt="Visa">
+            <img class="h-6 mr-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs3tigROa_zZV50EeCDMxpNuqIQW2u4OP_1Z3EbJgN&s" alt="Mastercard">
+            <img class="h-6 mr-2" src="https://download.logo.wine/logo/Apple_Pay/Apple_Pay-Logo.wine.png" alt="Apple Pay">
+            <img class="h-6" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" alt="American Express">
+          </div>
+        </div>
+
+        <div class="bg-green-900">      
+            <div class="flex ml-10 left-4">
+                <img class="h-12 mr-4" src="" alt="Facebook">
+                <img class="h-6 mr-4" src="" alt="Twitter">
+                <img class="h-6 mr-4" src="" alt="Instagram">
+                <img class="h-6 mr-4" src="" alt="YouTube">
+                <img class="h-6 mr-4" src="" alt="Pinterest">
+                <img class="h-6" src="" alt="LinkedIn">
+              </div>
+        </div>
+      </footer>
+
+      
+      
+      
+                  
+      
+
+      
+      
+      
+</body>
+
+</html>
